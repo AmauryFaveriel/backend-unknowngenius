@@ -3,19 +3,25 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Price
  *
- * @ORM\Table(name="Price", indexes={@ORM\Index(name="fk_Price_Category1_idx", columns={"idCategory"}), @ORM\Index(name="fk_Price_Year_idx", columns={"idYear"})})
+ * @ORM\Table(name="Price", indexes={@ORM\Index(name="fk_Price_Category1_idx", columns={"idCategory"})})
  * @ORM\Entity
  * @ApiResource(
  *     normalizationContext={"groups"={"price"}}
  * )
+ * @ApiFilter(RangeFilter::class, properties={"year"})
+ * @ApiFilter(SearchFilter::class, properties={"idcategory.category": "exact"})
  */
 class Price
 {
@@ -41,15 +47,12 @@ class Price
     private $idcategory;
 
     /**
-     * @var \Year
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Year")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idYear", referencedColumnName="idYear")
-     * })
+     * @ORM\Column(name="year", type="integer", nullable=false)
      * @Groups({"people","price"})
      */
-    private $idyear;
+    private $year;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -92,18 +95,17 @@ class Price
         return $this;
     }
 
-    public function getIdyear(): ?Year
+    public function getYear(): ?int
     {
-        return $this->idyear;
+        return $this->year;
     }
 
-    public function setIdyear(?Year $idyear): self
+    public function setYear(\DateTimeInterface $year): self
     {
-        $this->idyear = $idyear;
+        $this->year = $year;
 
         return $this;
     }
-
     /**
      * @return Collection|People[]
      */
