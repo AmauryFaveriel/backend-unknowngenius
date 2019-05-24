@@ -30,6 +30,14 @@ class Country
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="string", length=5, nullable=false)
+     * @Groups({"people","price"})
+     */
+    private $code;
+
     public function getIdcountry(): ?int
     {
         return $this->idcountry;
@@ -45,6 +53,22 @@ class Country
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCode(): string
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param string $code
+     */
+    public function setCode(string $code): void
+    {
+        $this->code = $code;
     }
 
 

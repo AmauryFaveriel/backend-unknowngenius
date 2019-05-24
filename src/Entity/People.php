@@ -35,7 +35,7 @@ class People
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="name", type="string", length=100, nullable=true)
      * @Groups({"people","price"})
      */
     private $name;
@@ -43,7 +43,7 @@ class People
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=45, nullable=false)
+     * @ORM\Column(name="firstname", type="string", length=100, nullable=true)
      * @Groups({"people","price"})
      */
     private $firstname;
@@ -51,7 +51,7 @@ class People
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthday", type="date", nullable=false)
+     * @ORM\Column(name="birthday", type="date", nullable=true)
      * @Groups({"people","price"})
      */
     private $birthday;
@@ -67,26 +67,10 @@ class People
     /**
      * @var string
      *
-     * @ORM\Column(name="birthcity", type="string", length=45, nullable=false)
+     * @ORM\Column(name="birthcity", type="string", length=45, nullable=true)
      * @@Groups({"people","price"})
      */
     private $birthcity;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="biography", type="string", length=1000, nullable=false)
-     * @Groups({"people","price"})
-     */
-    private $biography;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="work", type="string", length=1000, nullable=false)
-     * @@Groups({"people","price"})
-     */
-    private $work;
 
     /**
      * @var string
@@ -206,30 +190,6 @@ class People
     public function setBirthcity(string $birthcity): self
     {
         $this->birthcity = $birthcity;
-
-        return $this;
-    }
-
-    public function getBiography(): ?string
-    {
-        return $this->biography;
-    }
-
-    public function setBiography(string $biography): self
-    {
-        $this->biography = $biography;
-
-        return $this;
-    }
-
-    public function getWork(): ?string
-    {
-        return $this->work;
-    }
-
-    public function setWork(string $work): self
-    {
-        $this->work = $work;
 
         return $this;
     }

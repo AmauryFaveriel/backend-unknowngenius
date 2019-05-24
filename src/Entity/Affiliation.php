@@ -27,7 +27,7 @@ class Affiliation
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=45, nullable=false)
+     * @ORM\Column(name="name", type="string", length=110, nullable=false)
      * @@Groups({"people","price"})
      */
     private $name;
@@ -35,7 +35,7 @@ class Affiliation
     /**
      * @var string
      *
-     * @ORM\Column(name="address", type="string", length=45, nullable=false)
+     * @ORM\Column(name="address", type="string", length=45)
      * @Groups({"people","price"})
      */
     private $address;

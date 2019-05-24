@@ -7,9 +7,9 @@
 </head>
 <body>
     <script>
-        fetch('http://localhost:8000/api/people/1')
-        .then(res => res.json())
-            .then(json => console.log(json))
+        include("/data.json", function (x) {
+            console.log(x)
+        });
     </script>
 </body>
 </html>
