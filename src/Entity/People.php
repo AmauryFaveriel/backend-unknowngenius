@@ -18,7 +18,10 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * @ApiResource(
  *     normalizationContext={"groups"={"people"}}
  * )
- * @ApiFilter(SearchFilter::class, properties={"name": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "gender": "exact",
+ *     "idcountry.code": "exact"
+ *     })
  */
 class People
 {
@@ -76,7 +79,7 @@ class People
      * @var string
      *
      * @ORM\Column(name="gender", type="string", length=1, nullable=false)
-     * @@Groups({"people","price"})
+     * @Groups({"people","price"})
      */
     private $gender;
 

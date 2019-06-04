@@ -21,7 +21,11 @@ use Doctrine\ORM\Mapping as ORM;
  *     normalizationContext={"groups"={"price"}}
  * )
  * @ApiFilter(RangeFilter::class, properties={"year"})
- * @ApiFilter(SearchFilter::class, properties={"idcategory.category": "exact"})
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "idcategory.category": "exact",
+ *     "idpeople.gender": "exact",
+ *     "idpeople.idcountry.code": "exact"
+ *     })
  */
 class Price
 {
