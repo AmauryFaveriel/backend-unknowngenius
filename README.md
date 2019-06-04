@@ -1,6 +1,6 @@
-#Routes
+# Routes
 
-###People
+### People
 
 >/api/people
 
@@ -31,7 +31,7 @@ Filter :
 * gender: [ M | F | O ] avec M pour les hommes, F pour les femmes et O pour les organisations
 * idcountry.code: Code international du pays voulu (FR pour France, US pour USA, etc...)
 
-###Prizes
+### Prizes
 
 >/api/prices
 
@@ -65,7 +65,7 @@ Filter:
 * idpeople.gender: Voir **people** pour les filtres
 * idpeople.idcountry.code: Voir **people** pour les filtres
   
-**Attention** pour gender et idcountry.code avec price, il suffit qu'un seul des lauréats du prix soit de la nationalité
+**Attention** pour **gender** et **idcountry.code** avec price, il suffit qu'un seul des lauréats du prix soit de la nationalité
 ou du sexe pour que celui-ci apparaisse, une personne ayant gagné 2 prix nobels différents apparaitra 2 fois, de même un
 lauréats ne répondant pas aux critères demandés peut être retourné si il a gagné un prix en équipe avec un lauréat répondant
 aux critères.
