@@ -9,7 +9,6 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * Affiliation
  *
- * @ApiResource()
  * @ORM\Table(name="Affiliation")
  * @ORM\Entity
  */
