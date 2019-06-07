@@ -20,7 +20,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * )
  * @ApiFilter(SearchFilter::class, properties={
  *     "gender": "exact",
- *     "idcountry.code": "exact"
+ *     "idcountry.code": "exact",
+ *     "idprice.idcategory.category": "exact"
  *     })
  */
 class People

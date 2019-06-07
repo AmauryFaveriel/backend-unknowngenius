@@ -30,6 +30,7 @@ Filter :
 
 * gender: [ M | F | O ] avec M pour les hommes, F pour les femmes et O pour les organisations
 * idcountry.code: Code international du pays voulu (FR pour France, US pour USA, etc...)
+* idprice.idcategory.category: Tous les lauréats d'une catégorie
 
 ### Prizes
 
