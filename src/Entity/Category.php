@@ -4,12 +4,15 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * Category
  *
  * @ORM\Table(name="Category", uniqueConstraints={@ORM\UniqueConstraint(name="category_UNIQUE", columns={"category"})})
  * @ORM\Entity
+ * @ApiResource
+ *
  */
 class Category
 {

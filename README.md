@@ -70,3 +70,16 @@ Filter:
 ou du sexe pour que celui-ci apparaisse, une personne ayant gagné 2 prix nobels différents apparaitra 2 fois, de même un
 lauréats ne répondant pas aux critères demandés peut être retourné si il a gagné un prix en équipe avec un lauréat répondant
 aux critères.
+
+### Categories
+
+>/api/categories
+
+Structure de données :
+
+        [
+          {
+            "idcategory": 0,
+            "category": "string"
+          }
+        ]
