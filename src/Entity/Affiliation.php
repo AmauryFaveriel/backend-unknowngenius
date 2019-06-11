@@ -27,7 +27,7 @@ class Affiliation
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=110, nullable=false)
-     * @@Groups({"people","price"})
+     * @Groups({"people","price"})
      */
     private $name;
 
