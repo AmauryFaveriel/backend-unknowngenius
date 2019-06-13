@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * Country
  *
  * @ORM\Table(name="Country")
  * @ORM\Entity
+ * @ApiResource
  */
 class Country
 {

@@ -83,3 +83,17 @@ Structure de données :
             "category": "string"
           }
         ]
+        
+### Countries
+
+>/api/countries
+
+Structure de données :
+
+        [
+          {
+            "idcountry": 0,
+            "name": "string",
+            "code": "string"
+          }
+        ]
